@@ -5,10 +5,12 @@ const Login = () => {
 	const user = useSelector((state) => state.user);
 
 	return (
-		<>
-			<>{user.loginError && 'Login Failed'}</>
+		<div>
+			<strong className="block text-center text-red-900">
+				{user.loginError && 'Login Failed'}
+			</strong>
 			<LoginForm />
-		</>
+		</div>
 	);
 };
 
