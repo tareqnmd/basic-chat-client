@@ -1,4 +1,4 @@
-import { LOGIN, LOGIN_ERROR, LOGOUT } from './actionTypes';
+import { LOGIN, LOGIN_ERROR, LOGIN_ERROR_REMOVE, LOGOUT } from './actionTypes';
 import initialState from './initialState';
 
 const reducer = (state = initialState, action) => {
@@ -12,6 +12,11 @@ const reducer = (state = initialState, action) => {
 			return {
 				...initialState,
 				loginError: true,
+			};
+		case LOGIN_ERROR_REMOVE:
+			return {
+				...initialState,
+				loginError: false,
 			};
 		default:
 			return state;

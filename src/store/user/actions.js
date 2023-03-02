@@ -1,4 +1,4 @@
-import { LOGIN, LOGIN_ERROR, LOGOUT } from './actionTypes';
+import { LOGIN, LOGIN_ERROR, LOGIN_ERROR_REMOVE, LOGOUT } from './actionTypes';
 
 export const login = (payload) => {
 	return {
@@ -16,5 +16,10 @@ export const logout = () => {
 export const loginError = () => {
 	return {
 		type: LOGIN_ERROR,
+	};
+};
+export const loginErrorRemove = () => {
+	return {
+		type: LOGIN_ERROR_REMOVE,
 	};
 };

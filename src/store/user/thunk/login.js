@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { login, loginError } from '../actions';
+import { login, loginError, loginErrorRemove } from '../actions';
 const url = process.env.REACT_APP_API_URL;
 const loginHandler = (data) => {
 	return async (dispatch) => {
@@ -9,6 +9,9 @@ const loginHandler = (data) => {
 			localStorage.setItem('user', JSON.stringify({ name: user.name, email: user.email }));
 		} else {
 			dispatch(loginError());
+			setTimeout(() => {
+				dispatch(loginErrorRemove());
+			}, 2000);
 		}
 	};
 };
