@@ -1,10 +1,13 @@
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import login from '../../store/user/thunk/login';
 import styles from './Login.module.scss';
 const LoginForm = () => {
+	const dispatch = useDispatch();
 	const [loginData, setLoginData] = useState({});
 	const loginHandler = (e) => {
 		e.preventDefault();
-		console.log(loginData);
+		dispatch(login(loginData));
 	};
 
 	const stateChange = (e) => {

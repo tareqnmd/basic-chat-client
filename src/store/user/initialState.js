@@ -1,6 +1,7 @@
 const initialState = {
 	loggedIn: false,
-	userId: null,
+	id: null,
+	name: null,
 	email: null,
 };
 

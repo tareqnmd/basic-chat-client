@@ -7,7 +7,7 @@ const reducer = (state = initialState, action) => {
 		case LOGIN:
 			return { ...state, loggedIn: true, ...payload };
 		case LOGOUT:
-			return { ...state, loggedIn: true, id: null, email: null };
+			return { ...state, loggedIn: false, id: null, name: null, email: null };
 		default:
 			return state;
 	}
