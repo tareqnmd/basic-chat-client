@@ -1,25 +1,31 @@
-import logo from './logo.svg';
+import { useEffect, useState } from 'react';
 import './App.css';
+import Comments from './components/Comments';
+import Header from './components/Header';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const [users, setUsers] = useState([]);
+	const [selectedUserId, setSelectedUserId] = useState('');
+
+	async function fetchUsers() {
+		const result = await fetch('http://localhost:3200/users');
+		const users = await result.json();
+		setUsers(users?.length > 0 ? users : []);
+	}
+
+	useEffect(() => {
+		fetchUsers();
+	}, []);
+	return (
+		<div className="App">
+			<Header
+				users={users}
+				selectedUserId={selectedUserId}
+				setSelectedUserId={setSelectedUserId}
+			/>
+			<Comments selectedUserId={selectedUserId} />
+		</div>
+	);
 }
 
 export default App;
