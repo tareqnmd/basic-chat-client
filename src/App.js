@@ -4,6 +4,7 @@ import Login from './components/login/Login';
 
 const App = () => {
 	const user = useSelector((state) => state.user);
+	console.log('user', user);
 	return <main className="app">{user?.loggedIn ? <Chats /> : <Login />}</main>;
 };
 

@@ -1,13 +1,18 @@
-import { LOGIN, LOGOUT } from './actionTypes';
+import { LOGIN, LOGIN_ERROR, LOGOUT } from './actionTypes';
 import initialState from './initialState';
 
 const reducer = (state = initialState, action) => {
 	const { type, payload } = action;
 	switch (type) {
 		case LOGIN:
-			return { ...state, loggedIn: true, ...payload };
+			return { ...state, loginError: false, loggedIn: true, ...payload };
 		case LOGOUT:
-			return { ...state, loggedIn: false, id: null, name: null, email: null };
+			return { ...initialState, loggedIn: false, loginError: false };
+		case LOGIN_ERROR:
+			return {
+				...initialState,
+				loginError: true,
+			};
 		default:
 			return state;
 	}

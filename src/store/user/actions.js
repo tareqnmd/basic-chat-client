@@ -1,7 +1,6 @@
-import { LOGIN, LOGOUT } from './actionTypes';
+import { LOGIN, LOGIN_ERROR, LOGOUT } from './actionTypes';
 
 export const login = (payload) => {
-	console.log('payload', payload);
 	return {
 		type: LOGIN,
 		payload,
@@ -11,5 +10,11 @@ export const login = (payload) => {
 export const logout = () => {
 	return {
 		type: LOGOUT,
+	};
+};
+
+export const loginError = () => {
+	return {
+		type: LOGIN_ERROR,
 	};
 };
