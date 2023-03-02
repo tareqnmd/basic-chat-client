@@ -5,9 +5,9 @@ const reducer = (state = initialState, action) => {
 	const { type, payload } = action;
 	switch (type) {
 		case LOGIN:
-			return { ...state, ...payload };
+			return { ...state, loggedIn: true, ...payload };
 		case LOGOUT:
-			return { ...state, id: null, email: null };
+			return { ...state, loggedIn: true, id: null, email: null };
 		default:
 			return state;
 	}
