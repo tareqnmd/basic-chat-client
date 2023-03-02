@@ -1,0 +1,10 @@
+.chats {
+	max-width: 400px;
+	width: 100%;
+	padding: 16px;
+	@apply bg-white rounded;
+}
+
+.logout-btn {
+	@apply bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-1 px-4;
+}
