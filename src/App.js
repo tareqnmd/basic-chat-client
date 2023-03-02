@@ -3,6 +3,12 @@ import './App.css';
 import Comments from './components/Comments';
 import Header from './components/Header';
 
+// Add with other imports
+import io from 'socket.io-client';
+
+// Before the component definition:
+const socket = io.connect('http://localhost:3200');
+
 function App() {
 	const [users, setUsers] = useState([]);
 	const [selectedUserId, setSelectedUserId] = useState('');
@@ -23,7 +29,7 @@ function App() {
 				selectedUserId={selectedUserId}
 				setSelectedUserId={setSelectedUserId}
 			/>
-			<Comments selectedUserId={selectedUserId} />
+			<Comments socket={socket} selectedUserId={selectedUserId} />
 		</div>
 	);
 }

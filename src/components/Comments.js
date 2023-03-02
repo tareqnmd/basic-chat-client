@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import Comment from './Comment';
 
-const Comments = ({ selectedUserId }) => {
+const Comments = ({ socket, selectedUserId }) => {
 	const [comments, setComments] = useState([]);
 	const [input, setInput] = useState('');
 
@@ -24,6 +24,17 @@ const Comments = ({ selectedUserId }) => {
 	useEffect(() => {
 		fetchComments();
 	}, []);
+
+	useEffect(() => {
+		socket.on('new-comment', ({ comment }) => {
+			if (comment.author.id !== selectedUserId) {
+				setComments((comments) => [...comments, comment]);
+			}
+		});
+		return () => {
+			socket.off('new-comment');
+		};
+	}, [socket, selectedUserId]);
 
 	return (
 		<div className="Comments">
