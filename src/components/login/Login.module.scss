@@ -1,0 +1,11 @@
+.form {
+	max-width: 400px;
+	width: 100%;
+	padding: 16px;
+	input {
+		@apply bg-gray-50 border border-gray-300 text-gray-900 text-sm w-full px-5 py-2.5 rounded-lg mb-4;
+	}
+	button {
+		@apply text-white bg-blue-700 font-medium hover:bg-blue-800 px-5 py-2.5 w-full rounded-lg;
+	}
+}
