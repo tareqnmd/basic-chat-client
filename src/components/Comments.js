@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react';
 import Comment from './Comment';
+const URL = process.env.REACT_APP_API_URL;
 
 const Comments = ({ socket, selectedUserId }) => {
 	const [comments, setComments] = useState([]);
 	const [input, setInput] = useState('');
 
 	async function sendComment() {
-		const result = await fetch('http://localhost:3200/comments', {
+		const result = await fetch(`${URL}/comments`, {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify({ body: input, authorId: selectedUserId }),
@@ -16,7 +17,7 @@ const Comments = ({ socket, selectedUserId }) => {
 	}
 
 	async function fetchComments() {
-		const result = await fetch('http://localhost:3200/comments');
+		const result = await fetch(`${URL}/comments`);
 		const comments = await result.json();
 		setComments(comments?.length > 0 ? comments : []);
 	}
