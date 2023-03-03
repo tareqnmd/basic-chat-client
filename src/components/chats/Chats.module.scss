@@ -40,6 +40,9 @@
 		@apply appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none;
 	}
 	button {
-		@apply flex-shrink-0 bg-gray-900 text-sm text-white py-2 px-3 rounded;
+		@apply flex-shrink-0 flex items-center bg-gray-900 text-sm text-white py-2 px-3 rounded;
+		span {
+			margin-left: 4px;
+		}
 	}
 }
