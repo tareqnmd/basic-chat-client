@@ -47,8 +47,11 @@
 	}
 }
 
-.user-info {
-	@apply flex items-end;
+.message-details {
+	@apply flex items-end mb-2;
+	&:last-child {
+		@apply mb-0;
+	}
 	img {
 		width: 30px;
 		border-radius: 50%;
