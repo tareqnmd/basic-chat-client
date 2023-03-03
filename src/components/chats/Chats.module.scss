@@ -1,10 +1,33 @@
+.logout-btn {
+	@apply bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-1 px-4;
+}
+
 .chats {
+	@apply bg-white rounded;
 	max-width: 400px;
 	width: 100%;
 	padding: 16px;
-	@apply bg-white rounded;
 }
 
-.logout-btn {
-	@apply bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-1 px-4;
+.chat-items {
+	@apply bg-gray-900 text-white rounded overflow-y-scroll;
+	padding: 10px;
+	max-height: 400px;
+	height: 100%;
+	margin-top: 10px;
+
+	&::-webkit-scrollbar {
+		width: 10px;
+	}
+	&::-webkit-scrollbar-track {
+		box-shadow: inset 0 0 5px #3d7e63;
+		border-radius: 10px;
+	}
+	&::-webkit-scrollbar-thumb {
+		background: #3d7e63;
+		border-radius: 10px;
+	}
+	&::-webkit-scrollbar-thumb:hover {
+		background: #0b5f54;
+	}
 }
