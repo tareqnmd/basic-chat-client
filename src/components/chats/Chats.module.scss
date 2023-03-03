@@ -10,7 +10,7 @@
 }
 
 .chat-items {
-	@apply bg-gray-900 text-white rounded overflow-y-scroll;
+	@apply bg-gray-900 text-white rounded overflow-y-auto;
 	padding: 10px;
 	max-height: 400px;
 	height: 100%;
@@ -29,5 +29,17 @@
 	}
 	&::-webkit-scrollbar-thumb:hover {
 		background: #0b5f54;
+	}
+}
+
+.chat-send {
+	div {
+		@apply flex items-center border-b-2 border-gray-900 py-1;
+	}
+	input {
+		@apply appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none;
+	}
+	button {
+		@apply flex-shrink-0 bg-gray-900 text-sm text-white py-2 px-3 rounded;
 	}
 }
