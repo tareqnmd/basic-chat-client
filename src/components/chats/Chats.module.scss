@@ -45,9 +45,8 @@
 			margin-left: 4px;
 		}
 		&:disabled {
-			background-color: #cccccc;
+			@apply bg-gray-600 text-gray-500;
 			cursor: not-allowed;
-			color: #999999;
 		}
 	}
 }
