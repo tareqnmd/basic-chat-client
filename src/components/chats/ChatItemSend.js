@@ -3,8 +3,12 @@ import { FiSend } from 'react-icons/fi';
 import styles from './Chats.module.scss';
 const ChatItemSend = () => {
 	const [chat, setChat] = useState('');
+	const submitMessage = (e) => {
+		e.preventDefault();
+		console.log(chat);
+	};
 	return (
-		<form className={styles['chat-send']}>
+		<form className={styles['chat-send']} onSubmit={submitMessage}>
 			<div className="chat-send-area">
 				<input
 					type="text"
