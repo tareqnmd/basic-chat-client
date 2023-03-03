@@ -49,6 +49,9 @@
 
 .message-details {
 	@apply flex items-end mb-2;
+	&.self-message {
+		@apply flex-row-reverse;
+	}
 	&:last-child {
 		@apply mb-0;
 	}
@@ -57,7 +60,7 @@
 		border-radius: 50%;
 	}
 	div {
-		margin-left: 10px;
+		margin-left: 6px;
 		strong {
 			display: block;
 			margin-bottom: 6px;
@@ -72,6 +75,12 @@
 				border-bottom-left-radius: 18px;
 				margin-bottom: 0;
 			}
+		}
+	}
+	&.self-message {
+		div {
+			margin-left: 0px;
+			margin-right: 6px;
 		}
 	}
 }

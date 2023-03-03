@@ -30,7 +30,7 @@ const chats = [
 
 const ChatItems = () => {
 	return (
-		<div class={styles['chat-items']}>
+		<div className={styles['chat-items']}>
 			{chats.map((chat) => (
 				<ChatItem chat={chat} />
 			))}
