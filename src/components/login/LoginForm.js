@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { FiLogIn } from 'react-icons/fi';
 import { useDispatch } from 'react-redux';
 import login from '../../store/user/thunk/login';
 import styles from './Login.module.scss';
@@ -30,7 +31,10 @@ const LoginForm = () => {
 				onChange={stateChange}
 				required
 			/>
-			<button type="submit">Login</button>
+			<button type="submit">
+				<FiLogIn />
+				<span>Login</span>
+			</button>
 		</form>
 	);
 };

@@ -6,10 +6,7 @@ const loginHandler = (data) => {
 		const { data: user } = await axios.post(`${url}/user`, data);
 		if (user) {
 			dispatch(login(user));
-			localStorage.setItem(
-				'user',
-				JSON.stringify({ id: user.id, name: user.name, email: user.email })
-			);
+			localStorage.setItem('user', JSON.stringify(user));
 		} else {
 			dispatch(loginError());
 			setTimeout(() => {

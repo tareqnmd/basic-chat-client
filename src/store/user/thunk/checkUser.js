@@ -5,10 +5,6 @@ const checkUser = async (dispatch) => {
 		const user = JSON.parse(localStorage.getItem('user'));
 		if (user.email) {
 			dispatch(login(user));
-			localStorage.setItem(
-				'user',
-				JSON.stringify({ id: Number(user.id), name: user.name, email: user.email })
-			);
 		} else {
 			localStorage.removeItem('user');
 			dispatch(logout());

@@ -1,5 +1,8 @@
 .logout-btn {
-	@apply bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-1 px-4;
+	@apply flex items-center bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-1 px-4;
+	span {
+		margin-left: 4px;
+	}
 }
 
 .chats {
@@ -17,18 +20,17 @@
 	margin-top: 10px;
 
 	&::-webkit-scrollbar {
-		width: 10px;
+		width: 8px;
 	}
 	&::-webkit-scrollbar-track {
-		box-shadow: inset 0 0 5px #3d7e63;
+		box-shadow: inset 0 0 5px #757575;
 		border-radius: 10px;
 	}
 	&::-webkit-scrollbar-thumb {
-		background: #3d7e63;
-		border-radius: 10px;
+		background: #5e746b;
 	}
 	&::-webkit-scrollbar-thumb:hover {
-		background: #0b5f54;
+		background: #5e746b;
 	}
 }
 
@@ -83,5 +85,19 @@
 			margin-left: 0px;
 			margin-right: 6px;
 		}
+	}
+}
+
+.header-info {
+	@apply flex items-center;
+	img {
+		width: 30px;
+		margin-right: 6px;
+	}
+	strong {
+		line-height: 16px;
+	}
+	small {
+		line-height: 16px;
 	}
 }

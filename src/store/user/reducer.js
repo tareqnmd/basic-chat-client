@@ -5,7 +5,7 @@ const reducer = (state = initialState, action) => {
 	const { type, payload } = action;
 	switch (type) {
 		case LOGIN:
-			return { ...state, loginError: false, loggedIn: true, ...payload };
+			return { ...state, loginError: false, loggedIn: true, ...payload, id: Number(payload.id) };
 		case LOGOUT:
 			return { ...initialState, loggedIn: false, loginError: false };
 		case LOGIN_ERROR:
