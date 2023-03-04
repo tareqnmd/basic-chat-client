@@ -1,17 +1,13 @@
-import axios from 'axios';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { fetchChats } from '../../store/features/chats/chatSlice';
 import ChatItem from './ChatItem';
 import styles from './Chats.module.scss';
-const url = process.env.REACT_APP_API_URL;
 
 const ChatItems = () => {
-	const [chats, setChats] = useState([]);
-	const fetchComments = async () => {
-		const { data } = await axios.get(`${url}/comments`);
-		setChats(data);
-	};
+	const { chats } = useSelector((state) => state.chat);
 	useEffect(() => {
-		fetchComments();
+		fetchChats();
 	}, []);
 	return (
 		<div className={styles['chat-items']}>

@@ -1,8 +1,18 @@
-import { applyMiddleware, createStore } from 'redux';
+import { configureStore } from '@reduxjs/toolkit';
+import { applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import thunkMiddleware from 'redux-thunk';
-import rootReducer from './rootReducer';
+import chatReducer from './features/chats/chatSlice';
+import userReducer from './user/reducer';
 
-const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunkMiddleware)));
+const store = configureStore(
+	{
+		reducer: {
+			user: userReducer,
+			chat: chatReducer,
+		},
+	},
+	composeWithDevTools(applyMiddleware(thunkMiddleware))
+);
 
 export default store;
