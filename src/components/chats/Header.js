@@ -9,7 +9,7 @@ const Header = () => {
 		dispatch(logOutHandler);
 	};
 	return (
-		<header className="flex items-center justify-between border-b-4 border-sky-900 pb-2">
+		<header className="flex items-center justify-between border-b-4 border-gray-900 pb-2">
 			<div className={styles['header-info']}>
 				<img src={user.imgSrc} alt={user.name} />
 				<div className="flex flex-col">
