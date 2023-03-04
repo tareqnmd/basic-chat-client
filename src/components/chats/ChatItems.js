@@ -6,13 +6,17 @@ import styles from './Chats.module.scss';
 
 const ChatItems = () => {
 	const dispatch = useDispatch();
-	const { chats } = useSelector((state) => state.chat);
+	const { chats, loading, error } = useSelector((state) => state.chat);
 	useEffect(() => {
 		dispatch(fetchChats());
 	}, [dispatch]);
 	return (
 		<div className={styles['chat-items']}>
-			{chats.length > 0 ? (
+			{loading ? (
+				<div className="p-3 text-center">Loading</div>
+			) : error ? (
+				<div className="p-3 text-center text-red-600">{error}</div>
+			) : chats.length > 0 ? (
 				chats.map((chat, i) => <ChatItem key={i} chat={chat} />)
 			) : (
 				<div className="p-3 text-center">No Messages</div>
