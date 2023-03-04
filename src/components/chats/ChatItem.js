@@ -10,8 +10,8 @@ const ChatItem = ({ chat }) => {
 		>
 			<img src={img} alt={name} title={name} />
 			<div>
-				{messages.map((message) => (
-					<strong>{message}</strong>
+				{messages.map((message, i) => (
+					<strong key={i}>{message}</strong>
 				))}
 			</div>
 		</div>

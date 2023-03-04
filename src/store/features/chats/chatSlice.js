@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
-const url = 'http://localhost:3200';
+const url = process.env.REACT_APP_API_URL;
 
 const initialState = {
 	chats: [],
@@ -9,7 +9,7 @@ const initialState = {
 };
 
 export const fetchChats = createAsyncThunk('chat/fetchChats', async () => {
-	const { data } = await axios.get(`${url}/comments`);
+	const { data } = await axios.get(`${url}/chats`);
 	return data;
 });
 
@@ -35,4 +35,4 @@ const chatSlice = createSlice({
 	},
 });
 
-export default chatSlice;
+export default chatSlice.reducer;
