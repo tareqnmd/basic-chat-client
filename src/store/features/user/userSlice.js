@@ -8,7 +8,7 @@ const initialState = {
 	userFullName: '',
 	userEmail: '',
 	userAvatarUrl: '',
-	loading: true,
+	loading: false,
 	error: '',
 };
 
