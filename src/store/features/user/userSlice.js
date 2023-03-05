@@ -8,7 +8,8 @@ const initialState = {
 	userFullName: '',
 	userEmail: '',
 	userAvatarUrl: '',
-	error: false,
+	loading: true,
+	error: '',
 };
 
 export const loginUser = createAsyncThunk('user/loginUser', async () => {
@@ -20,9 +21,22 @@ const userSlice = createSlice({
 	name: 'user',
 	initialState,
 	extraReducers: (builder) => {
-		builder.addCase(loginUser.pending, (state, action) => {});
-		builder.addCase(loginUser.fulfilled, (state, action) => {});
-		builder.addCase(loginUser.rejected, (state, action) => {});
+		builder.addCase(loginUser.pending, (state, action) => {
+			state.loading = true;
+		});
+		builder.addCase(loginUser.fulfilled, (state, action) => {
+			state.loading = false;
+			state.userId = '';
+			state.userName = '';
+			state.userFullName = '';
+			state.userEmail = '';
+			state.userAvatarUrl = '';
+			state.error = action.error.message;
+		});
+		builder.addCase(loginUser.rejected, (state, action) => {
+			state.loading = false;
+			state.error = action.error.message;
+		});
 	},
 });
 

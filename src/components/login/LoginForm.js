@@ -1,10 +1,12 @@
 import { useState } from 'react';
+import { AiOutlineLoading3Quarters } from 'react-icons/ai';
 import { FiLogIn } from 'react-icons/fi';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import login from '../../store/user/thunk/login';
 import styles from './Login.module.scss';
 const LoginForm = () => {
 	const dispatch = useDispatch();
+	const user = useSelector((state) => state.user);
 	const [loginData, setLoginData] = useState({});
 	const loginHandler = (e) => {
 		e.preventDefault();
@@ -32,7 +34,7 @@ const LoginForm = () => {
 				required
 			/>
 			<button type="submit">
-				<FiLogIn />
+				{user.loading ? <AiOutlineLoading3Quarters /> : <FiLogIn />}
 				<span>Login</span>
 			</button>
 		</form>
