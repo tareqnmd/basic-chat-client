@@ -1,12 +1,14 @@
 import { useSelector } from 'react-redux';
 import styles from './Chats.module.scss';
 
-const ChatItem = ({ chat }) => {
+const Chat = ({ chat }) => {
 	const { img, name, messages, userId } = chat;
 	const { id } = useSelector((state) => state.user);
 	return (
 		<div
-			className={`${styles['message-details']} ${userId === id ? styles['self-message'] : null}`}
+			className={`${styles['message-details']} ${
+				userId === id ? styles['self-message'] : null
+			}`}
 		>
 			<img src={img} alt={name} title={name} />
 			<div>
@@ -18,4 +20,4 @@ const ChatItem = ({ chat }) => {
 	);
 };
 
-export default ChatItem;
+export default Chat;

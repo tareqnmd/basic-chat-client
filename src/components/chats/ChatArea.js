@@ -1,12 +1,15 @@
-import ChatItems from './ChatItems';
-import ChatItemSend from './ChatItemSend';
+import ChatFooter from './ChatFooter';
+import ChatHeader from './ChatHeader';
+import Chats from './Chats';
+import styles from './Chats.module.scss';
 
 const ChatArea = () => {
 	return (
-		<>
-			<ChatItems />
-			<ChatItemSend />
-		</>
+		<section className={styles.chats}>
+			<ChatHeader />
+			<Chats />
+			<ChatFooter />
+		</section>
 	);
 };
 
