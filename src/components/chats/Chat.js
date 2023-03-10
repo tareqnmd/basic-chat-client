@@ -6,9 +6,7 @@ const Chat = ({ chat }) => {
 	const { id } = useSelector((state) => state.user);
 	return (
 		<div
-			className={`${styles['message-details']} ${
-				userId === id ? styles['self-message'] : null
-			}`}
+			className={`${styles['message-details']} ${userId === id ? styles['self-message'] : null}`}
 		>
 			<img src={img} alt={name} title={name} />
 			<div>
