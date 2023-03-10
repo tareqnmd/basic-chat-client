@@ -1,14 +1,11 @@
 import { useState } from 'react';
 import { FiLogIn } from 'react-icons/fi';
-import { useDispatch } from 'react-redux';
-import login from '../../store/user/thunk/login';
-import styles from './Login.module.scss';
+import styles from './LoginForm.module.scss';
 const LoginForm = () => {
-	const dispatch = useDispatch();
 	const [loginData, setLoginData] = useState({});
 	const loginHandler = (e) => {
 		e.preventDefault();
-		dispatch(login(loginData));
+		console.log('loginData', loginData);
 	};
 
 	const stateChange = (e) => {

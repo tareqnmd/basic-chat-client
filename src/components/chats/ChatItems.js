@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchChats } from '../../store/features/chats/chatSlice';
+import { fetchChats } from '../../features/chats/chatsSlice';
+
 import ChatItem from './ChatItem';
 import styles from './Chats.module.scss';
 

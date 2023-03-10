@@ -7,7 +7,6 @@ const ChatItemSend = () => {
 	const user = useSelector((state) => state.user);
 	const submitMessage = (e) => {
 		e.preventDefault();
-		
 		console.log(chat, user.id);
 	};
 	return (

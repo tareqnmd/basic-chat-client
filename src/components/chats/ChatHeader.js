@@ -1,13 +1,10 @@
 import { FiLogOut } from 'react-icons/fi';
 import { useDispatch, useSelector } from 'react-redux';
-import logOutHandler from '../../store/user/thunk/logout';
 import styles from './Chats.module.scss';
-const Header = () => {
+const ChatHeader = () => {
 	const dispatch = useDispatch();
 	const user = useSelector((state) => state.user);
-	const logOut = () => {
-		dispatch(logOutHandler);
-	};
+	const logOut = () => {};
 	return (
 		<header className="flex items-center justify-between border-b-4 border-gray-900 pb-2">
 			<div className={styles['header-info']}>
@@ -25,4 +22,4 @@ const Header = () => {
 	);
 };
 
-export default Header;
+export default ChatHeader;

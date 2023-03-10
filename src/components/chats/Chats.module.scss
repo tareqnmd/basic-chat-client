@@ -5,12 +5,6 @@
 	}
 }
 
-.chats {
-	@apply bg-white rounded;
-	max-width: 400px;
-	width: 100%;
-	padding: 16px;
-}
 
 .chat-items {
 	@apply bg-gray-900 text-white rounded overflow-x-hidden overflow-y-auto;

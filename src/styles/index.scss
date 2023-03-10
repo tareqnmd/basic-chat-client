@@ -5,3 +5,10 @@
 .app {
 	@apply bg-gray-900 grid place-items-center h-screen;
 }
+
+.chats {
+	@apply bg-white rounded;
+	max-width: 400px;
+	width: 100%;
+	padding: 16px;
+}

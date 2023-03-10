@@ -1,16 +1,16 @@
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import Chats from './components/chats/Chats';
-import Login from './components/login/Login';
-import checkUser from './store/user/thunk/checkUser';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Home from './page/Home';
+import Login from './page/Login';
 
 const App = () => {
-	const dispatch = useDispatch();
-	useEffect(() => {
-		dispatch(checkUser);
-	}, [dispatch]);
-	const user = useSelector((state) => state.user);
-	return <main className="app">{user?.loggedIn ? <Chats /> : <Login />}</main>;
+	return (
+		<Router>
+			<Routes>
+				<Route path="/login" element={<Login />}></Route>
+				<Route path="/" element={<Home />}></Route>
+			</Routes>
+		</Router>
+	);
 };
 
 export default App;

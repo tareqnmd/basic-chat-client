@@ -13,7 +13,7 @@ export const fetchChats = createAsyncThunk('chat/fetchChats', async () => {
 	return data;
 });
 
-const chatSlice = createSlice({
+const chatsSlice = createSlice({
 	name: 'chat',
 	initialState,
 	extraReducers: (builder) => {
@@ -35,4 +35,4 @@ const chatSlice = createSlice({
 	},
 });
 
-export default chatSlice.reducer;
+export default chatsSlice.reducer;
