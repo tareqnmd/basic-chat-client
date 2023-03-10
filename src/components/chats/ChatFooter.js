@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { FiSend } from 'react-icons/fi';
 import { useSelector } from 'react-redux';
 import styles from './Chats.module.scss';
-const ChatItemSend = () => {
+const ChatFooter = () => {
 	const [chat, setChat] = useState('');
 	const user = useSelector((state) => state.user);
 	const submitMessage = (e) => {
@@ -29,4 +29,4 @@ const ChatItemSend = () => {
 	);
 };
 
-export default ChatItemSend;
+export default ChatFooter;

@@ -3,7 +3,7 @@
 @import 'tailwindcss/utilities';
 
 .app {
-	@apply bg-gray-900 grid place-items-center h-screen;
+	@apply bg-gray-900 grid place-items-center h-screen overflow-auto py-3;
 }
 
 .chats {

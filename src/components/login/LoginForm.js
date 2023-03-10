@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { AiOutlineLoading3Quarters } from 'react-icons/ai';
 import { FiLogIn } from 'react-icons/fi';
 import styles from './LoginForm.module.scss';
 const LoginForm = () => {
@@ -29,7 +30,7 @@ const LoginForm = () => {
 				required
 			/>
 			<button type="submit">
-				<FiLogIn />
+				<AiOutlineLoading3Quarters /> <FiLogIn />
 				<span>Login</span>
 			</button>
 		</form>

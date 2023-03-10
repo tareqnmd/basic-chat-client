@@ -1,11 +1,13 @@
+import ChatFooter from './ChatFooter';
+import ChatHeader from './ChatHeader';
 import ChatItems from './ChatItems';
-import ChatItemSend from './ChatItemSend';
 
 const Chats = () => {
 	return (
 		<>
+			<ChatHeader />
 			<ChatItems />
-			<ChatItemSend />
+			<ChatFooter />
 		</>
 	);
 };
