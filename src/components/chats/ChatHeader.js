@@ -1,8 +1,7 @@
 import { FiLogOut } from 'react-icons/fi';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import styles from './Chats.module.scss';
 const ChatHeader = () => {
-	const dispatch = useDispatch();
 	const user = useSelector((state) => state.user);
 	const logOut = () => {};
 	return (
